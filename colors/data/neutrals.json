@@ -1,0 +1,1110 @@
+{
+  "_comment": "中性色库。official 段为 Tailwind v3 原值（MIT）；derived 段由 stone 明度阶梯推导，非官方值。",
+  "families": [
+    {
+      "id": "stone",
+      "name_zh": "暖灰 · 石",
+      "name_en": "Stone",
+      "tone": "暖",
+      "note": "带一点黄褐的暖灰，最适合做米色系页面的骨架",
+      "source": "tailwind-v3",
+      "derived": false,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#fafaf9",
+          "rgb": "250 250 249",
+          "hsl": "60 9% 98%",
+          "lab": "98.2 -0.2 0.5",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.74
+        },
+        {
+          "step": 100,
+          "hex": "#f5f5f4",
+          "rgb": "245 245 244",
+          "hsl": "60 5% 96%",
+          "lab": "96.5 -0.2 0.5",
+          "contrastOnLight": 1.04,
+          "contrastOnDark": 16.03
+        },
+        {
+          "step": 200,
+          "hex": "#e7e5e4",
+          "rgb": "231 229 228",
+          "hsl": "20 6% 90%",
+          "lab": "91.1 0.5 0.7",
+          "contrastOnLight": 1.2,
+          "contrastOnDark": 13.93
+        },
+        {
+          "step": 300,
+          "hex": "#d6d3d1",
+          "rgb": "214 211 209",
+          "hsl": "24 6% 83%",
+          "lab": "84.7 0.7 1.4",
+          "contrastOnLight": 1.43,
+          "contrastOnDark": 11.74
+        },
+        {
+          "step": 400,
+          "hex": "#a8a29e",
+          "rgb": "168 162 158",
+          "hsl": "24 5% 64%",
+          "lab": "67.0 1.4 2.8",
+          "contrastOnLight": 2.41,
+          "contrastOnDark": 6.93
+        },
+        {
+          "step": 500,
+          "hex": "#78716c",
+          "rgb": "120 113 108",
+          "hsl": "25 5% 45%",
+          "lab": "48.1 1.8 3.7",
+          "contrastOnLight": 4.59,
+          "contrastOnDark": 3.65
+        },
+        {
+          "step": 600,
+          "hex": "#57534e",
+          "rgb": "87 83 78",
+          "hsl": "33 5% 32%",
+          "lab": "35.5 0.6 3.5",
+          "contrastOnLight": 7.3,
+          "contrastOnDark": 2.29
+        },
+        {
+          "step": 700,
+          "hex": "#44403c",
+          "rgb": "68 64 60",
+          "hsl": "30 6% 25%",
+          "lab": "27.4 0.9 3.1",
+          "contrastOnLight": 9.84,
+          "contrastOnDark": 1.7
+        },
+        {
+          "step": 800,
+          "hex": "#292524",
+          "rgb": "41 37 36",
+          "hsl": "12 6% 15%",
+          "lab": "15.1 1.6 1.3",
+          "contrastOnLight": 14.52,
+          "contrastOnDark": 1.15
+        },
+        {
+          "step": 900,
+          "hex": "#1c1917",
+          "rgb": "28 25 23",
+          "hsl": "24 10% 10%",
+          "lab": "9.0 1.0 1.9",
+          "contrastOnLight": 16.74,
+          "contrastOnDark": 1
+        },
+        {
+          "step": 950,
+          "hex": "#0c0a09",
+          "rgb": "12 10 9",
+          "hsl": "20 14% 4%",
+          "lab": "2.8 0.4 0.6",
+          "contrastOnLight": 18.92,
+          "contrastOnDark": 1.13
+        }
+      ]
+    },
+    {
+      "id": "neutral",
+      "name_zh": "纯中性",
+      "name_en": "Neutral",
+      "tone": "中性",
+      "note": "没有色相倾向，最安全，也最容易被当成默认",
+      "source": "tailwind-v3",
+      "derived": false,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#fafafa",
+          "rgb": "250 250 250",
+          "hsl": "0 0% 98%",
+          "lab": "98.3 -0.0 0.0",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.76
+        },
+        {
+          "step": 100,
+          "hex": "#f5f5f5",
+          "rgb": "245 245 245",
+          "hsl": "0 0% 96%",
+          "lab": "96.5 -0.0 0.0",
+          "contrastOnLight": 1.04,
+          "contrastOnDark": 16.04
+        },
+        {
+          "step": 200,
+          "hex": "#e5e5e5",
+          "rgb": "229 229 229",
+          "hsl": "0 0% 90%",
+          "lab": "90.9 -0.0 0.0",
+          "contrastOnLight": 1.21,
+          "contrastOnDark": 13.88
+        },
+        {
+          "step": 300,
+          "hex": "#d4d4d4",
+          "rgb": "212 212 212",
+          "hsl": "0 0% 83%",
+          "lab": "84.9 -0.0 0.0",
+          "contrastOnLight": 1.42,
+          "contrastOnDark": 11.8
+        },
+        {
+          "step": 400,
+          "hex": "#a3a3a3",
+          "rgb": "163 163 163",
+          "hsl": "0 0% 64%",
+          "lab": "67.0 -0.0 0.0",
+          "contrastOnLight": 2.42,
+          "contrastOnDark": 6.93
+        },
+        {
+          "step": 500,
+          "hex": "#737373",
+          "rgb": "115 115 115",
+          "hsl": "0 0% 45%",
+          "lab": "48.4 -0.0 0.0",
+          "contrastOnLight": 4.54,
+          "contrastOnDark": 3.69
+        },
+        {
+          "step": 600,
+          "hex": "#525252",
+          "rgb": "82 82 82",
+          "hsl": "0 0% 32%",
+          "lab": "34.9 -0.0 0.0",
+          "contrastOnLight": 7.48,
+          "contrastOnDark": 2.24
+        },
+        {
+          "step": 700,
+          "hex": "#404040",
+          "rgb": "64 64 64",
+          "hsl": "0 0% 25%",
+          "lab": "27.1 -0.0 0.0",
+          "contrastOnLight": 9.93,
+          "contrastOnDark": 1.69
+        },
+        {
+          "step": 800,
+          "hex": "#262626",
+          "rgb": "38 38 38",
+          "hsl": "0 0% 15%",
+          "lab": "15.2 -0.0 0.0",
+          "contrastOnLight": 14.49,
+          "contrastOnDark": 1.16
+        },
+        {
+          "step": 900,
+          "hex": "#171717",
+          "rgb": "23 23 23",
+          "hsl": "0 0% 9%",
+          "lab": "7.7 -0.0 0.0",
+          "contrastOnLight": 17.17,
+          "contrastOnDark": 1.03
+        },
+        {
+          "step": 950,
+          "hex": "#0a0a0a",
+          "rgb": "10 10 10",
+          "hsl": "0 0% 4%",
+          "lab": "2.7 -0.0 0.0",
+          "contrastOnLight": 18.96,
+          "contrastOnDark": 1.13
+        }
+      ]
+    },
+    {
+      "id": "zinc",
+      "name_zh": "微冷中性",
+      "name_en": "Zinc",
+      "tone": "微冷",
+      "note": "带极轻的蓝紫，比 neutral 更现代",
+      "source": "tailwind-v3",
+      "derived": false,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#fafafa",
+          "rgb": "250 250 250",
+          "hsl": "0 0% 98%",
+          "lab": "98.3 -0.0 0.0",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.76
+        },
+        {
+          "step": 100,
+          "hex": "#f4f4f5",
+          "rgb": "244 244 245",
+          "hsl": "240 5% 96%",
+          "lab": "96.2 0.2 -0.5",
+          "contrastOnLight": 1.05,
+          "contrastOnDark": 15.91
+        },
+        {
+          "step": 200,
+          "hex": "#e4e4e7",
+          "rgb": "228 228 231",
+          "hsl": "240 6% 90%",
+          "lab": "90.7 0.5 -1.5",
+          "contrastOnLight": 1.21,
+          "contrastOnDark": 13.78
+        },
+        {
+          "step": 300,
+          "hex": "#d4d4d8",
+          "rgb": "212 212 216",
+          "hsl": "240 5% 84%",
+          "lab": "85.0 0.7 -2.0",
+          "contrastOnLight": 1.42,
+          "contrastOnDark": 11.83
+        },
+        {
+          "step": 400,
+          "hex": "#a1a1aa",
+          "rgb": "161 161 170",
+          "hsl": "240 5% 65%",
+          "lab": "66.5 1.8 -4.7",
+          "contrastOnLight": 2.45,
+          "contrastOnDark": 6.82
+        },
+        {
+          "step": 500,
+          "hex": "#71717a",
+          "rgb": "113 113 122",
+          "hsl": "240 4% 46%",
+          "lab": "47.9 1.9 -5.0",
+          "contrastOnLight": 4.63,
+          "contrastOnDark": 3.62
+        },
+        {
+          "step": 600,
+          "hex": "#52525b",
+          "rgb": "82 82 91",
+          "hsl": "240 5% 34%",
+          "lab": "35.2 2.0 -5.2",
+          "contrastOnLight": 7.4,
+          "contrastOnDark": 2.26
+        },
+        {
+          "step": 700,
+          "hex": "#3f3f46",
+          "rgb": "63 63 70",
+          "hsl": "240 5% 26%",
+          "lab": "26.9 1.6 -4.3",
+          "contrastOnLight": 10,
+          "contrastOnDark": 1.67
+        },
+        {
+          "step": 800,
+          "hex": "#27272a",
+          "rgb": "39 39 42",
+          "hsl": "240 4% 16%",
+          "lab": "15.7 0.7 -2.0",
+          "contrastOnLight": 14.26,
+          "contrastOnDark": 1.17
+        },
+        {
+          "step": 900,
+          "hex": "#18181b",
+          "rgb": "24 24 27",
+          "hsl": "240 6% 10%",
+          "lab": "8.4 0.8 -2.1",
+          "contrastOnLight": 16.96,
+          "contrastOnDark": 1.01
+        },
+        {
+          "step": 950,
+          "hex": "#09090b",
+          "rgb": "9 9 11",
+          "hsl": "240 10% 4%",
+          "lab": "2.5 0.3 -0.8",
+          "contrastOnLight": 19.05,
+          "contrastOnDark": 1.14
+        }
+      ]
+    },
+    {
+      "id": "gray",
+      "name_zh": "中性偏冷",
+      "name_en": "Gray",
+      "tone": "偏冷",
+      "note": "常见界面灰，通用但略乏味",
+      "source": "tailwind-v3",
+      "derived": false,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#f9fafb",
+          "rgb": "249 250 251",
+          "hsl": "210 20% 98%",
+          "lab": "98.2 -0.2 -0.6",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.73
+        },
+        {
+          "step": 100,
+          "hex": "#f3f4f6",
+          "rgb": "243 244 246",
+          "hsl": "220 14% 96%",
+          "lab": "96.2 0.0 -1.1",
+          "contrastOnLight": 1.05,
+          "contrastOnDark": 15.89
+        },
+        {
+          "step": 200,
+          "hex": "#e5e7eb",
+          "rgb": "229 231 235",
+          "hsl": "220 13% 91%",
+          "lab": "91.6 0.1 -2.2",
+          "contrastOnLight": 1.19,
+          "contrastOnDark": 14.13
+        },
+        {
+          "step": 300,
+          "hex": "#d1d5db",
+          "rgb": "209 213 219",
+          "hsl": "216 12% 84%",
+          "lab": "85.1 -0.2 -3.4",
+          "contrastOnLight": 1.41,
+          "contrastOnDark": 11.87
+        },
+        {
+          "step": 400,
+          "hex": "#9ca3af",
+          "rgb": "156 163 175",
+          "hsl": "218 11% 65%",
+          "lab": "66.8 -0.0 -7.1",
+          "contrastOnLight": 2.43,
+          "contrastOnDark": 6.89
+        },
+        {
+          "step": 500,
+          "hex": "#6b7280",
+          "rgb": "107 114 128",
+          "hsl": "220 9% 46%",
+          "lab": "47.9 0.5 -8.6",
+          "contrastOnLight": 4.63,
+          "contrastOnDark": 3.62
+        },
+        {
+          "step": 600,
+          "hex": "#4b5563",
+          "rgb": "75 85 99",
+          "hsl": "215 14% 34%",
+          "lab": "35.8 -0.5 -9.4",
+          "contrastOnLight": 7.24,
+          "contrastOnDark": 2.31
+        },
+        {
+          "step": 700,
+          "hex": "#374151",
+          "rgb": "55 65 81",
+          "hsl": "217 19% 27%",
+          "lab": "27.3 0.3 -11.0",
+          "contrastOnLight": 9.87,
+          "contrastOnDark": 1.7
+        },
+        {
+          "step": 800,
+          "hex": "#1f2937",
+          "rgb": "31 41 55",
+          "hsl": "215 28% 17%",
+          "lab": "16.3 0.0 -10.4",
+          "contrastOnLight": 14.05,
+          "contrastOnDark": 1.19
+        },
+        {
+          "step": 900,
+          "hex": "#111827",
+          "rgb": "17 24 39",
+          "hsl": "221 39% 11%",
+          "lab": "8.3 2.0 -11.3",
+          "contrastOnLight": 16.99,
+          "contrastOnDark": 1.01
+        },
+        {
+          "step": 950,
+          "hex": "#030712",
+          "rgb": "3 7 18",
+          "hsl": "224 71% 4%",
+          "lab": "1.9 0.8 -5.3",
+          "contrastOnLight": 19.28,
+          "contrastOnDark": 1.15
+        }
+      ]
+    },
+    {
+      "id": "slate",
+      "name_zh": "冷灰 · 石灰",
+      "name_en": "Slate",
+      "tone": "冷",
+      "note": "明显偏蓝，适合科技与暗色界面",
+      "source": "tailwind-v3",
+      "derived": false,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#f8fafc",
+          "rgb": "248 250 252",
+          "hsl": "210 40% 98%",
+          "lab": "98.2 -0.3 -1.2",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.71
+        },
+        {
+          "step": 100,
+          "hex": "#f1f5f9",
+          "rgb": "241 245 249",
+          "hsl": "210 40% 96%",
+          "lab": "96.3 -0.6 -2.4",
+          "contrastOnLight": 1.05,
+          "contrastOnDark": 15.96
+        },
+        {
+          "step": 200,
+          "hex": "#e2e8f0",
+          "rgb": "226 232 240",
+          "hsl": "214 32% 91%",
+          "lab": "91.8 -0.5 -4.6",
+          "contrastOnLight": 1.18,
+          "contrastOnDark": 14.19
+        },
+        {
+          "step": 300,
+          "hex": "#cbd5e1",
+          "rgb": "203 213 225",
+          "hsl": "213 27% 84%",
+          "lab": "84.9 -1.1 -7.1",
+          "contrastOnLight": 1.42,
+          "contrastOnDark": 11.78
+        },
+        {
+          "step": 400,
+          "hex": "#94a3b8",
+          "rgb": "148 163 184",
+          "hsl": "215 20% 65%",
+          "lab": "66.5 -0.7 -12.6",
+          "contrastOnLight": 2.46,
+          "contrastOnDark": 6.82
+        },
+        {
+          "step": 500,
+          "hex": "#64748b",
+          "rgb": "100 116 139",
+          "hsl": "215 16% 47%",
+          "lab": "48.3 -0.3 -14.5",
+          "contrastOnLight": 4.56,
+          "contrastOnDark": 3.67
+        },
+        {
+          "step": 600,
+          "hex": "#475569",
+          "rgb": "71 85 105",
+          "hsl": "215 19% 35%",
+          "lab": "35.7 -0.2 -13.3",
+          "contrastOnLight": 7.26,
+          "contrastOnDark": 2.31
+        },
+        {
+          "step": 700,
+          "hex": "#334155",
+          "rgb": "51 65 85",
+          "hsl": "215 25% 27%",
+          "lab": "27.1 0.1 -13.8",
+          "contrastOnLight": 9.91,
+          "contrastOnDark": 1.69
+        },
+        {
+          "step": 800,
+          "hex": "#1e293b",
+          "rgb": "30 41 59",
+          "hsl": "217 33% 17%",
+          "lab": "16.4 1.1 -13.0",
+          "contrastOnLight": 14.01,
+          "contrastOnDark": 1.2
+        },
+        {
+          "step": 900,
+          "hex": "#0f172a",
+          "rgb": "15 23 42",
+          "hsl": "222 47% 11%",
+          "lab": "8.0 3.3 -14.1",
+          "contrastOnLight": 17.09,
+          "contrastOnDark": 1.02
+        },
+        {
+          "step": 950,
+          "hex": "#020617",
+          "rgb": "2 6 23",
+          "hsl": "229 84% 5%",
+          "lab": "1.9 2.0 -8.8",
+          "contrastOnLight": 19.31,
+          "contrastOnDark": 1.15
+        }
+      ]
+    },
+    {
+      "id": "ivory",
+      "name_zh": "米白",
+      "name_en": "Ivory",
+      "tone": "暖",
+      "note": "几乎无色的暖白，做页面底色比纯白温和",
+      "source": "derived-from-stone",
+      "derived": true,
+      "derived_note": "hue 46°, saturation ×1.1 capped at 12%",
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#fafaf9",
+          "rgb": "250 250 249",
+          "hsl": "60 9% 98%",
+          "lab": "98.2 -0.2 0.5",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.74
+        },
+        {
+          "step": 100,
+          "hex": "#f5f5f4",
+          "rgb": "245 245 244",
+          "hsl": "60 5% 96%",
+          "lab": "96.5 -0.2 0.5",
+          "contrastOnLight": 1.04,
+          "contrastOnDark": 16.03
+        },
+        {
+          "step": 200,
+          "hex": "#e7e6e4",
+          "rgb": "231 230 228",
+          "hsl": "40 6% 90%",
+          "lab": "91.3 -0.0 1.1",
+          "contrastOnLight": 1.19,
+          "contrastOnDark": 14.02
+        },
+        {
+          "step": 300,
+          "hex": "#d6d5d1",
+          "rgb": "214 213 209",
+          "hsl": "48 6% 83%",
+          "lab": "85.2 -0.4 2.1",
+          "contrastOnLight": 1.41,
+          "contrastOnDark": 11.91
+        },
+        {
+          "step": 400,
+          "hex": "#a8a69e",
+          "rgb": "168 166 158",
+          "hsl": "48 5% 64%",
+          "lab": "68.1 -0.8 4.4",
+          "contrastOnLight": 2.33,
+          "contrastOnDark": 7.17
+        },
+        {
+          "step": 500,
+          "hex": "#79766b",
+          "rgb": "121 118 107",
+          "hsl": "47 6% 45%",
+          "lab": "49.6 -0.9 6.5",
+          "contrastOnLight": 4.36,
+          "contrastOnDark": 3.84
+        },
+        {
+          "step": 600,
+          "hex": "#57554e",
+          "rgb": "87 85 78",
+          "hsl": "47 5% 32%",
+          "lab": "36.1 -0.6 4.4",
+          "contrastOnLight": 7.14,
+          "contrastOnDark": 2.34
+        },
+        {
+          "step": 700,
+          "hex": "#44423c",
+          "rgb": "68 66 60",
+          "hsl": "45 6% 25%",
+          "lab": "28.0 -0.4 4.0",
+          "contrastOnLight": 9.62,
+          "contrastOnDark": 1.74
+        },
+        {
+          "step": 800,
+          "hex": "#292824",
+          "rgb": "41 40 36",
+          "hsl": "48 6% 15%",
+          "lab": "16.1 -0.5 2.8",
+          "contrastOnLight": 14.13,
+          "contrastOnDark": 1.19
+        },
+        {
+          "step": 900,
+          "hex": "#1c1b17",
+          "rgb": "28 27 23",
+          "hsl": "48 10% 10%",
+          "lab": "9.7 -0.5 3.0",
+          "contrastOnLight": 16.5,
+          "contrastOnDark": 1.01
+        },
+        {
+          "step": 950,
+          "hex": "#0c0b09",
+          "rgb": "12 11 9",
+          "hsl": "40 14% 4%",
+          "lab": "3.0 0.0 0.9",
+          "contrastOnLight": 18.84,
+          "contrastOnDark": 1.12
+        }
+      ]
+    },
+    {
+      "id": "oat",
+      "name_zh": "燕麦",
+      "name_en": "Oat",
+      "tone": "暖",
+      "note": "带谷物感的浅米，做卡片面",
+      "source": "derived-from-stone",
+      "derived": true,
+      "derived_note": "hue 42°, saturation ×1.35 capped at 16%",
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#fafaf9",
+          "rgb": "250 250 249",
+          "hsl": "60 9% 98%",
+          "lab": "98.2 -0.2 0.5",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.74
+        },
+        {
+          "step": 100,
+          "hex": "#f5f5f4",
+          "rgb": "245 245 244",
+          "hsl": "60 5% 96%",
+          "lab": "96.5 -0.2 0.5",
+          "contrastOnLight": 1.04,
+          "contrastOnDark": 16.03
+        },
+        {
+          "step": 200,
+          "hex": "#e8e6e3",
+          "rgb": "232 230 227",
+          "hsl": "36 10% 90%",
+          "lab": "91.4 0.1 1.7",
+          "contrastOnLight": 1.19,
+          "contrastOnDark": 14.04
+        },
+        {
+          "step": 300,
+          "hex": "#d7d5d0",
+          "rgb": "215 213 208",
+          "hsl": "43 8% 83%",
+          "lab": "85.3 -0.2 2.7",
+          "contrastOnLight": 1.4,
+          "contrastOnDark": 11.92
+        },
+        {
+          "step": 400,
+          "hex": "#aaa69c",
+          "rgb": "170 166 156",
+          "hsl": "43 8% 64%",
+          "lab": "68.2 -0.4 5.7",
+          "contrastOnLight": 2.33,
+          "contrastOnDark": 7.2
+        },
+        {
+          "step": 500,
+          "hex": "#7a756a",
+          "rgb": "122 117 106",
+          "hsl": "41 7% 45%",
+          "lab": "49.4 -0.1 6.8",
+          "contrastOnLight": 4.39,
+          "contrastOnDark": 3.81
+        },
+        {
+          "step": 600,
+          "hex": "#59554c",
+          "rgb": "89 85 76",
+          "hsl": "42 8% 32%",
+          "lab": "36.3 -0.1 5.8",
+          "contrastOnLight": 7.11,
+          "contrastOnDark": 2.36
+        },
+        {
+          "step": 700,
+          "hex": "#45423b",
+          "rgb": "69 66 59",
+          "hsl": "42 8% 25%",
+          "lab": "28.1 -0.2 4.7",
+          "contrastOnLight": 9.6,
+          "contrastOnDark": 1.75
+        },
+        {
+          "step": 800,
+          "hex": "#2a2823",
+          "rgb": "42 40 35",
+          "hsl": "43 9% 15%",
+          "lab": "16.2 -0.2 3.6",
+          "contrastOnLight": 14.1,
+          "contrastOnDark": 1.19
+        },
+        {
+          "step": 900,
+          "hex": "#1d1b16",
+          "rgb": "29 27 22",
+          "hsl": "43 14% 10%",
+          "lab": "9.8 -0.2 3.8",
+          "contrastOnLight": 16.47,
+          "contrastOnDark": 1.02
+        },
+        {
+          "step": 950,
+          "hex": "#0c0b09",
+          "rgb": "12 11 9",
+          "hsl": "40 14% 4%",
+          "lab": "3.0 0.0 0.9",
+          "contrastOnLight": 18.84,
+          "contrastOnDark": 1.12
+        }
+      ]
+    },
+    {
+      "id": "sand",
+      "name_zh": "沙色",
+      "name_en": "Sand",
+      "tone": "暖",
+      "note": "明确的沙色，适合分隔与次级面",
+      "source": "derived-from-stone",
+      "derived": true,
+      "derived_note": "hue 38°, saturation ×1.7 capped at 22%",
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#fafaf9",
+          "rgb": "250 250 249",
+          "hsl": "60 9% 98%",
+          "lab": "98.2 -0.2 0.5",
+          "contrastOnLight": 1,
+          "contrastOnDark": 16.74
+        },
+        {
+          "step": 100,
+          "hex": "#f5f5f4",
+          "rgb": "245 245 244",
+          "hsl": "60 5% 96%",
+          "lab": "96.5 -0.2 0.5",
+          "contrastOnLight": 1.04,
+          "contrastOnDark": 16.03
+        },
+        {
+          "step": 200,
+          "hex": "#e8e6e3",
+          "rgb": "232 230 227",
+          "hsl": "36 10% 90%",
+          "lab": "91.4 0.1 1.7",
+          "contrastOnLight": 1.19,
+          "contrastOnDark": 14.04
+        },
+        {
+          "step": 300,
+          "hex": "#d8d5cf",
+          "rgb": "216 213 207",
+          "hsl": "40 10% 83%",
+          "lab": "85.3 -0.0 3.3",
+          "contrastOnLight": 1.4,
+          "contrastOnDark": 11.94
+        },
+        {
+          "step": 400,
+          "hex": "#aba59b",
+          "rgb": "171 165 155",
+          "hsl": "38 9% 64%",
+          "lab": "68.0 0.4 5.9",
+          "contrastOnLight": 2.34,
+          "contrastOnDark": 7.15
+        },
+        {
+          "step": 500,
+          "hex": "#7c7568",
+          "rgb": "124 117 104",
+          "hsl": "39 9% 45%",
+          "lab": "49.5 0.3 8.1",
+          "contrastOnLight": 4.37,
+          "contrastOnDark": 3.83
+        },
+        {
+          "step": 600,
+          "hex": "#5a554b",
+          "rgb": "90 85 75",
+          "hsl": "40 9% 32%",
+          "lab": "36.3 0.1 6.6",
+          "contrastOnLight": 7.09,
+          "contrastOnDark": 2.36
+        },
+        {
+          "step": 700,
+          "hex": "#474239",
+          "rgb": "71 66 57",
+          "hsl": "39 11% 25%",
+          "lab": "28.2 0.3 6.2",
+          "contrastOnLight": 9.55,
+          "contrastOnDark": 1.75
+        },
+        {
+          "step": 800,
+          "hex": "#2b2822",
+          "rgb": "43 40 34",
+          "hsl": "40 12% 15%",
+          "lab": "16.2 0.1 4.5",
+          "contrastOnLight": 14.07,
+          "contrastOnDark": 1.19
+        },
+        {
+          "step": 900,
+          "hex": "#1e1b15",
+          "rgb": "30 27 21",
+          "hsl": "40 18% 10%",
+          "lab": "9.9 0.1 4.7",
+          "contrastOnLight": 16.44,
+          "contrastOnDark": 1.02
+        },
+        {
+          "step": 950,
+          "hex": "#0d0b08",
+          "rgb": "13 11 8",
+          "hsl": "36 24% 4%",
+          "lab": "3.1 0.2 1.4",
+          "contrastOnLight": 18.82,
+          "contrastOnDark": 1.12
+        }
+      ]
+    },
+    {
+      "id": "clay",
+      "name_zh": "浅咖",
+      "name_en": "Clay",
+      "tone": "暖",
+      "note": "偏红的浅咖，做强调面或旧纸",
+      "source": "derived-from-stone",
+      "derived": true,
+      "derived_note": "hue 28°, saturation ×1.8 capped at 26%",
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#faf9f9",
+          "rgb": "250 249 249",
+          "hsl": "0 9% 98%",
+          "lab": "98.0 0.3 0.1",
+          "contrastOnLight": 1.01,
+          "contrastOnDark": 16.64
+        },
+        {
+          "step": 100,
+          "hex": "#f5f4f4",
+          "rgb": "245 244 244",
+          "hsl": "0 5% 96%",
+          "lab": "96.3 0.3 0.1",
+          "contrastOnLight": 1.05,
+          "contrastOnDark": 15.93
+        },
+        {
+          "step": 200,
+          "hex": "#e8e5e3",
+          "rgb": "232 229 227",
+          "hsl": "24 10% 90%",
+          "lab": "91.1 0.7 1.3",
+          "contrastOnLight": 1.2,
+          "contrastOnDark": 13.95
+        },
+        {
+          "step": 300,
+          "hex": "#d8d3cf",
+          "rgb": "216 211 207",
+          "hsl": "27 10% 83%",
+          "lab": "84.8 1.0 2.6",
+          "contrastOnLight": 1.42,
+          "contrastOnDark": 11.77
+        },
+        {
+          "step": 400,
+          "hex": "#aca29a",
+          "rgb": "172 162 154",
+          "hsl": "27 10% 64%",
+          "lab": "67.2 2.2 5.5",
+          "contrastOnLight": 2.4,
+          "contrastOnDark": 6.99
+        },
+        {
+          "step": 500,
+          "hex": "#7d7167",
+          "rgb": "125 113 103",
+          "hsl": "27 10% 45%",
+          "lab": "48.4 2.9 7.2",
+          "contrastOnLight": 4.54,
+          "contrastOnDark": 3.69
+        },
+        {
+          "step": 600,
+          "hex": "#5b524a",
+          "rgb": "91 82 74",
+          "hsl": "28 10% 32%",
+          "lab": "35.5 2.2 6.0",
+          "contrastOnLight": 7.31,
+          "contrastOnDark": 2.29
+        },
+        {
+          "step": 700,
+          "hex": "#474039",
+          "rgb": "71 64 57",
+          "hsl": "30 11% 25%",
+          "lab": "27.6 1.6 5.4",
+          "contrastOnLight": 9.76,
+          "contrastOnDark": 1.72
+        },
+        {
+          "step": 800,
+          "hex": "#2b2622",
+          "rgb": "43 38 34",
+          "hsl": "27 12% 15%",
+          "lab": "15.6 1.5 3.5",
+          "contrastOnLight": 14.33,
+          "contrastOnDark": 1.17
+        },
+        {
+          "step": 900,
+          "hex": "#1e1915",
+          "rgb": "30 25 21",
+          "hsl": "27 18% 10%",
+          "lab": "9.2 1.6 3.7",
+          "contrastOnLight": 16.69,
+          "contrastOnDark": 1
+        },
+        {
+          "step": 950,
+          "hex": "#0d0a08",
+          "rgb": "13 10 8",
+          "hsl": "24 24% 4%",
+          "lab": "2.9 0.6 1.1",
+          "contrastOnLight": 18.9,
+          "contrastOnDark": 1.13
+        }
+      ]
+    },
+    {
+      "id": "taupe",
+      "name_zh": "灰褐",
+      "name_en": "Taupe",
+      "tone": "暖",
+      "note": "灰里透褐，做文字与边框比纯灰有温度",
+      "source": "derived-from-stone",
+      "derived": true,
+      "derived_note": "hue 22°, saturation ×1.5 capped at 20%",
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#faf9f9",
+          "rgb": "250 249 249",
+          "hsl": "0 9% 98%",
+          "lab": "98.0 0.3 0.1",
+          "contrastOnLight": 1.01,
+          "contrastOnDark": 16.64
+        },
+        {
+          "step": 100,
+          "hex": "#f5f4f4",
+          "rgb": "245 244 244",
+          "hsl": "0 5% 96%",
+          "lab": "96.3 0.3 0.1",
+          "contrastOnLight": 1.05,
+          "contrastOnDark": 15.93
+        },
+        {
+          "step": 200,
+          "hex": "#e8e5e3",
+          "rgb": "232 229 227",
+          "hsl": "24 10% 90%",
+          "lab": "91.1 0.7 1.3",
+          "contrastOnLight": 1.2,
+          "contrastOnDark": 13.95
+        },
+        {
+          "step": 300,
+          "hex": "#d7d3d0",
+          "rgb": "215 211 208",
+          "hsl": "26 8% 83%",
+          "lab": "84.8 0.8 2.0",
+          "contrastOnLight": 1.42,
+          "contrastOnDark": 11.76
+        },
+        {
+          "step": 400,
+          "hex": "#aba19b",
+          "rgb": "171 161 155",
+          "hsl": "23 9% 64%",
+          "lab": "66.9 2.6 4.4",
+          "contrastOnLight": 2.42,
+          "contrastOnDark": 6.91
+        },
+        {
+          "step": 500,
+          "hex": "#7b7069",
+          "rgb": "123 112 105",
+          "hsl": "23 8% 45%",
+          "lab": "48.0 3.0 5.4",
+          "contrastOnLight": 4.61,
+          "contrastOnDark": 3.63
+        },
+        {
+          "step": 600,
+          "hex": "#59514c",
+          "rgb": "89 81 76",
+          "hsl": "23 8% 32%",
+          "lab": "35.1 2.3 4.1",
+          "contrastOnLight": 7.43,
+          "contrastOnDark": 2.25
+        },
+        {
+          "step": 700,
+          "hex": "#463e3a",
+          "rgb": "70 62 58",
+          "hsl": "20 9% 25%",
+          "lab": "26.9 2.6 3.7",
+          "contrastOnLight": 10,
+          "contrastOnDark": 1.67
+        },
+        {
+          "step": 800,
+          "hex": "#2a2623",
+          "rgb": "42 38 35",
+          "hsl": "26 9% 15%",
+          "lab": "15.5 1.2 2.7",
+          "contrastOnLight": 14.36,
+          "contrastOnDark": 1.17
+        },
+        {
+          "step": 900,
+          "hex": "#1d1916",
+          "rgb": "29 25 22",
+          "hsl": "26 14% 10%",
+          "lab": "9.1 1.3 2.8",
+          "contrastOnLight": 16.72,
+          "contrastOnDark": 1
+        },
+        {
+          "step": 950,
+          "hex": "#0d0a08",
+          "rgb": "13 10 8",
+          "hsl": "24 24% 4%",
+          "lab": "2.9 0.6 1.1",
+          "contrastOnLight": 18.9,
+          "contrastOnDark": 1.13
+        }
+      ]
+    }
+  ]
+}
