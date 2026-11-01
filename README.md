@@ -6,11 +6,13 @@
 frontend-assets/
 ├── index.html              配色库浏览页
 ├── serve.mjs               本地静态服务器（零依赖）
-└── colors/
-    ├── build.mjs           生成两份 JSON
-    └── data/
-        ├── neutrals.json   中性色：10 组 × 11 阶 = 110 色
-        └── accents.json    亮色：14 色相 × 4 档 = 56 色
+├── colors/
+│   ├── build.mjs           生成两份 JSON
+│   └── data/
+│       ├── neutrals.json   中性色：10 组 × 11 阶 = 110 色
+│       └── accents.json    亮色：14 色相 × 4 档 = 56 色
+└── skill/
+    └── RULES.md            极简设计风格规则（决策记录与规则真源）
 ```
 
 ## 打开
@@ -72,7 +74,8 @@ node build.mjs
 
 ## 接下来
 
-个人极简设计风格的 skill 做完后也会放进这个仓库。
+个人极简设计风格的 skill 正在做。规则已整理在 `skill/RULES.md`，
+`SKILL.md` 会由它派生，两者一起放在 `skill/` 下。
 
 ## 许可
 
