@@ -272,6 +272,12 @@
   </div>
 </main>
 
+<script src="../grid-overlay.js"></script>
+<script>
+  /* 网格验收：?grid=1 自动打开，任何时候按 g 开关 */
+  if (location.search.includes('grid') && window.__grid) window.__grid.toggle();
+</script>
+
 <script>
   /* 标题逐词入场：把文字按「，。、」与空格切分，逐块上浮 */
   (function () {
