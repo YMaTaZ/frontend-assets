@@ -1,0 +1,215 @@
+/* ============================================================
+   极简设计风格 · tokens
+   排版 / 间距 / 圆角 / 动效。颜色见 frontend-assets 的配色库。
+
+   用法：
+     <link rel="stylesheet" href="tokens.css">
+     <html data-ramp="b">        A = 精简三档 / B = 四档 / C = 苹果式双档
+
+   三档共用一套底层刻度，只是取点不同，不会出现 1.4rem 这种野生数字。
+   ============================================================ */
+
+:root {
+  /* ---------- 底层刻度：0.8125 / 0.875 / 1 / 1.125 / 1.25 / 1.5 / 1.75 / 2.125 rem ---------- */
+  --fs-13: 0.8125rem; /* 13px  元信息，全站固定，不参与档位 */
+  --fs-14: 0.875rem;  /* 14px  小字 */
+  --fs-16: 1rem;      /* 16px  正文底线 */
+  --fs-18: 1.125rem;  /* 18px  过渡 */
+  --fs-20: 1.25rem;   /* 20px  h2 */
+  --fs-24: 1.5rem;    /* 24px  h2（B 档） */
+  --fs-28: 1.75rem;   /* 28px  h1 */
+  --fs-34: 2.125rem;  /* 34px  展示级（C 档） */
+
+  /* ---------- 字族 ---------- */
+  --font-ui: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+
+  /* ---------- 字重：只用 400 / 500；600 仅限 ≥2.125rem 的展示字 ---------- */
+  --weight-body: 400;
+  --weight-title: 500;
+  --weight-display: 600;
+
+  /* ---------- 阅读度量 ---------- */
+  --measure: 32em;          /* ≈ 32 个中文字 / ≈64 个英文字符 */
+  --measure-wide: 40em;     /* 宽版：仅用于图注、引言 */
+
+  /* ---------- 间距：4 基 ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---------- 版心 ---------- */
+  --container: 800px;
+  --container-wide: 1120px;
+  --gutter: 48px;
+
+  /* ---------- 圆角：同心，逐级递减 ---------- */
+  --radius-card: 12px;
+  --radius-inner: 8px;
+  --radius-control: 6px;
+
+  /* ---------- 动效 ---------- */
+  --dur-instant: 120ms;  /* 100–150 即时反馈 */
+  --dur-state: 220ms;    /* 150–300 状态切换 */
+  --dur-layout: 380ms;   /* 300–500 布局与浮层 */
+  --dur-enter: 640ms;    /* 500–800 焦点入场 */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* 默认档位：B */
+  --h1: var(--fs-28);
+  --h2: var(--fs-24);
+  --h3: var(--fs-20);
+  --body: var(--fs-16);
+  --meta: var(--fs-13);
+  --lh-title: 1.25;
+  --lh-body: 1.75;
+}
+
+/* ============================================================
+   档位 A —— 精简三档
+   落地页、单一信息页、幻灯片封面
+   1.75 / 1.25 / 1.0
+   ============================================================ */
+[data-ramp="a"] {
+  --h1: var(--fs-28);
+  --h2: var(--fs-20);
+  --h3: var(--fs-16);
+  --body: var(--fs-16);
+  --lh-title: 1.2;
+  --lh-body: 1.75;
+}
+
+/* ============================================================
+   档位 B —— 四档带过渡（默认）
+   项目详情、作品集内页、长文档、幻灯片内容页
+   1.75 / 1.5 / 1.25 / 1.0
+   ============================================================ */
+[data-ramp="b"] {
+  --h1: var(--fs-28);
+  --h2: var(--fs-24);
+  --h3: var(--fs-20);
+  --body: var(--fs-16);
+  --lh-title: 1.25;
+  --lh-body: 1.75;
+}
+
+/* ============================================================
+   档位 C —— 苹果式双档
+   幻灯片章节页、数据大字、全屏主张
+   2.125 / 1.0625，中间不设过渡
+   ============================================================ */
+[data-ramp="c"] {
+  --h1: var(--fs-34);
+  --h2: var(--fs-34);
+  --h3: var(--fs-34);
+  --body: 1.0625rem;
+  --lh-title: 1.1;
+  --lh-body: 1.7;
+}
+
+/* ============================================================
+   基础排版
+   ============================================================ */
+
+html {
+  font-family: var(--font-ui);
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: var(--body);
+  line-height: var(--lh-body);
+  font-weight: var(--weight-body);
+}
+
+h1, .h1 {
+  font-size: var(--h1);
+  line-height: var(--lh-title);
+  font-weight: var(--weight-title);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-5);
+}
+
+h2, .h2 {
+  font-size: var(--h2);
+  line-height: calc(var(--lh-title) + 0.05);
+  font-weight: var(--weight-title);
+  margin: var(--space-8) 0 var(--space-3);
+}
+
+h3, .h3 {
+  font-size: var(--h3);
+  line-height: calc(var(--lh-title) + 0.15);
+  font-weight: var(--weight-title);
+  margin: var(--space-6) 0 var(--space-2);
+}
+
+/* C 档没有中间层级：h2/h3 退化为与 h1 同字号，靠留白分块 */
+[data-ramp="c"] h2,
+[data-ramp="c"] h3 {
+  font-weight: var(--weight-display);
+  opacity: 0.72;
+}
+
+p {
+  max-width: var(--measure);
+  margin: 0 0 var(--space-4);
+}
+
+p + p {
+  margin-top: 0;
+}
+
+small, .meta, .caption {
+  font-size: var(--meta);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  opacity: 0.68;
+}
+
+/* 代表性数字、代码用等宽，且对齐 */
+.num, code, .mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+blockquote {
+  max-width: var(--measure-wide);
+  margin: var(--space-6) 0;
+  padding-left: var(--space-4);
+  border-left: 2px solid currentColor;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   深底浅字：三轴补偿
+   ============================================================ */
+[data-surface="dark"] {
+  --lh-body: 1.8;
+  letter-spacing: 0.012em;
+}
+
+[data-surface="dark"] body,
+[data-surface="dark"] p {
+  font-weight: 450;
+}
+
+/* ============================================================
+   减弱动效：减少位移，保留状态变化
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: 1ms;
+    --dur-state: 1ms;
+    --dur-layout: 1ms;
+    --dur-enter: 1ms;
+  }
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>排版三档对照 · typography</title>
+<link rel="stylesheet" href="./tokens.css">
+<style>
+  :root {
+    --paper: #FAFAF9;
+    --card: #FFFFFF;
+    --ink: #292524;
+    --ink-soft: #57534E;
+    --line: rgba(120, 113, 108, 0.22);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-ui);
+  }
+  .page { max-width: 1240px; margin: 0 auto; padding: 40px 28px 80px; }
+  .top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+  .top h1 { font-size: 1.125rem; font-weight: 500; margin: 0; letter-spacing: 0; line-height: 1.4; }
+  .top .sub { font-size: 13px; color: var(--ink-soft); }
+  .note { font-size: 13px; color: var(--ink-soft); margin: 0 0 28px; max-width: 60em; line-height: 1.7; }
+
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+
+  .col {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+  .col__head {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .col__id { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-soft); }
+  .col__name { font-size: 13px; font-weight: 500; }
+  .col__specs { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-soft); }
+  .col__use { padding: 8px 16px 0; font-size: 11.5px; color: var(--ink-soft); line-height: 1.6; }
+
+  .col__body { padding: 16px; font-size: var(--body); line-height: var(--lh-body); }
+  .col__body h1 { margin-bottom: 12px; }
+  .col__body h2 { margin: 28px 0 10px; }
+  .col__body h3 { margin: 20px 0 8px; }
+  .col__body p { margin: 0 0 12px; }
+  .col__body .meta { display: block; margin-bottom: 10px; }
+
+  .ruler {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .ruler b { font-weight: 500; color: var(--ink); }
+
+  @media (max-width: 960px) {
+    .cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <h1>排版三档对照</h1>
+    <span class="sub">同一段内容，三种信息密度</span>
+  </div>
+  <p class="note">
+    三档共用一套底层刻度（0.8125 / 0.875 / 1 / 1.125 / 1.25 / 1.5 / 1.75 / 2.125 rem），只是取点不同。
+    切换只需要在 <code>&lt;html data-ramp="a|b|c"&gt;</code> 上改一个字母。底部给出该档实际计算出的字号。
+  </p>
+
+  <div class="cols">
+    <!-- A -->
+    <section class="col" data-ramp="a">
+      <header class="col__head">
+        <span class="col__id">A</span>
+        <span class="col__name">精简三档</span>
+        <span class="col__specs">1.75 / 1.25 / 1.0</span>
+      </header>
+      <div class="col__use">落地页、单一信息页、幻灯片封面。一屏一个主张，层级越少越利落。</div>
+      <div class="col__body">
+        <span class="meta">2026 · 项目记录</span>
+        <h1>安静地做减法</h1>
+        <p>留白不是空，是让眼睛有地方停下来。一个页面只讲一件事的时候，标题和正文之间不需要过渡层，读者会自己找到重心。</p>
+        <h2>为什么少一层更好</h2>
+        <p>因为信息本来就少。三档的代价是长文档难分层，好处是在单屏里几乎没有歧义：最大的字是主张，其余都是解释。</p>
+        <p>This ramp keeps three sizes only: 28 / 20 / 16. Nothing in between competes for attention.</p>
+        <div class="ruler" data-readout></div>
+      </div>
+    </section>
+
+    <!-- B -->
+    <section class="col" data-ramp="b">
+      <header class="col__head">
+        <span class="col__id">B</span>
+        <span class="col__name">四档带过渡</span>
+        <span class="col__specs">1.75 / 1.5 / 1.25 / 1.0</span>
+      </header>
+      <div class="col__use">项目详情、作品集内页、长文档、幻灯片内容页。默认档。</div>
+      <div class="col__body">
+        <span class="meta">2026 · 项目记录</span>
+        <h1>安静地做减法</h1>
+        <p>留白不是空，是让眼睛有地方停下来。一个页面只讲一件事的时候，标题和正文之间不需要过渡层，读者会自己找到重心。</p>
+        <h2>为什么少一层更好</h2>
+        <p>因为信息本来就少。三档的代价是长文档难分层，好处是在单屏里几乎没有歧义：最大的字是主张，其余都是解释。</p>
+        <h3>一层过渡救回的是什么</h3>
+        <p>当页面开始分小节，20px 的 h3 让「组」和「段」之间有了落差，读者不必靠加粗去分辨结构。</p>
+        <p>This ramp adds one step: 28 / 24 / 20 / 16. Section heads no longer collapse into body copy.</p>
+        <div class="ruler" data-readout></div>
+      </div>
+    </section>
+
+    <!-- C -->
+    <section class="col" data-ramp="c">
+      <header class="col__head">
+        <span class="col__id">C</span>
+        <span class="col__name">苹果式双档</span>
+        <span class="col__specs">2.125 / 1.0625</span>
+      </header>
+      <div class="col__use">幻灯片章节页、数据大字、全屏主张。中间不设过渡，靠留白分块。</div>
+      <div class="col__body">
+        <span class="meta">2026 · 项目记录</span>
+        <h1>安静地做减法</h1>
+        <p>留白不是空，是让眼睛有地方停下来。一个页面只讲一件事的时候，标题和正文之间不需要过渡层，读者会自己找到重心。</p>
+        <h2>为什么少一层更好</h2>
+        <p>因为信息本来就少。三档的代价是长文档难分层，好处是在单屏里几乎没有歧义：最大的字是主张，其余都是解释。</p>
+        <p>This ramp is deliberately extreme: 34 / 17. Hierarchy comes from scale contrast and space, not middle steps.</p>
+        <div class="ruler" data-readout></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  const px = (el, prop) => parseFloat(getComputedStyle(el)[prop]);
+  document.querySelectorAll('[data-readout]').forEach((box) => {
+    const col = box.closest('.col');
+    const h1 = col.querySelector('h1');
+    const h2 = col.querySelector('h2');
+    const h3 = col.querySelector('h3');
+    const p = col.querySelector('p');
+    const parts = [];
+    parts.push('h1 <b>' + px(h1, 'fontSize') + '</b>');
+    if (h2) parts.push('h2 <b>' + px(h2, 'fontSize') + '</b>');
+    if (h3) parts.push('h3 <b>' + px(h3, 'fontSize') + '</b>');
+    parts.push('body <b>' + px(p, 'fontSize') + '</b>');
+    parts.push('行高 <b>' + (px(p, 'lineHeight') / px(p, 'fontSize')).toFixed(2) + '</b>');
+    parts.push('行宽上限 <b>' + Math.round(px(p, 'maxWidth')) + 'px</b>');
+    box.innerHTML = parts.join(' · ');
+  });
+</script>
+</body>
+</html>
