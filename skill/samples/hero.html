@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="zh-CN" data-ramp="a">
+<html lang="zh-CN" data-ramp="a" data-fonts="web">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>黄金样本 · Hero</title>
 <link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../fonts/fonts.css">
 <!--
   黄金样本 #1：一屏 hero
   用途：给 SKILL.md 当参照物。规则写得再细，不如一张达标的页面。
@@ -138,7 +139,19 @@
     display: flex;
     align-items: center;
     gap: var(--space-5);
-    margin-bottom: var(--space-9);
+    margin-bottom: var(--space-8);
+  }
+
+  /* 引文：唯一一处用楷体，一段以内 */
+  .hero__quote {
+    font-family: var(--font-kai);
+    font-size: 1.0625rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--line);
+    padding-left: var(--space-4);
+    margin: 0 0 var(--space-8);
+    max-width: 22em;
   }
 
   /* 控件：圆角 6，唯一一处用强调色 */
@@ -240,6 +253,8 @@
     <a class="btn" href="#">看作品</a>
     <a class="link-quiet" href="#">读设计笔记 →</a>
   </div>
+
+  <p class="hero__quote">留白不是空，是让眼睛有地方停下来。</p>
 
   <div class="index">
     <div class="index__item">
