@@ -1,0 +1,7 @@
+# 字体全量源文件（38 MB，不进仓库）
+fonts/_src/
+fonts/_charset*.txt
+
+# Python
+__pycache__/
+*.pyc

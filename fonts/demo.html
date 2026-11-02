@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN" data-ramp="b" data-fonts="web">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网页字体验证 · Noto Sans / Serif SC</title>
+<link rel="stylesheet" href="../skill/tokens.css">
+<link rel="stylesheet" href="./fonts.css">
+<style>
+  body { margin: 0; background: #FAFAF9; color: #292524; }
+  .page { max-width: 860px; margin: 0 auto; padding: 56px 32px 96px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: 2.25rem; line-height: 1.25; margin: 0 0 20px; }
+  h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; margin: 40px 0 12px; }
+  p { margin: 0 0 14px; max-width: 32em; }
+  .lede { font-size: 1.0625rem; color: #57534E; }
+  .tag { font-family: var(--font-mono); font-size: 12px; color: #A8A29E; letter-spacing: .04em; text-transform: uppercase; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; margin: 12px 0 0; }
+  .spec { border-top: 1px solid rgba(120,113,108,.2); padding-top: 10px; flex: 1 1 240px; }
+  .spec b { font-weight: 500; }
+  .latin { font-family: "Noto Sans SC Web", system-ui; letter-spacing: .2em; font-size: 12px; color: #57534E; }
+  .status { font-family: var(--font-mono); font-size: 12px; margin-top: 28px; padding: 10px 12px; background: #F5F5F4; border-radius: 8px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="tag">Web Font Check</p>
+  <h1>安静地做减法，<br>把复杂的事讲清楚。</h1>
+  <p class="lede">交互设计与前端实现。克制的视觉，讲究的动效 —— 动效只在一处发生，其余时间页面保持安静。</p>
+
+  <h2>正文（Noto Sans SC 400）</h2>
+  <p>留白不是空，是让眼睛有地方停下来。一个页面只讲一件事的时候，标题和正文之间不需要过渡层，读者会自己找到重心。</p>
+  <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</p>
+
+  <h2>中粗（Noto Sans SC 500）</h2>
+  <p style="font-weight:500">当页面开始分小节，中间层级让「组」和「段」之间有了落差，读者不必靠加粗去分辨结构。</p>
+
+  <h2>标题（Noto Serif SC）</h2>
+  <p style="font-family:var(--font-display); font-size:1.5rem; line-height:1.4; max-width:26em">宋体带来的正式感，比黑体更适合长文与作品集内页。</p>
+
+  <div class="row">
+    <div class="spec"><b>汉字覆盖</b><br>测试生僻字：龘 齉 爨 纛 鬮 麤 龗</div>
+    <div class="spec"><b>标点</b><br>「引号」、破折号——省略号…… 括号（全角）</div>
+    <div class="spec"><b>数字对齐</b><br><span style="font-family:var(--font-mono)">1,234.56 / 7,890.12</span></div>
+  </div>
+
+  <div class="status" id="status">检测中…</div>
+</div>
+
+<script>
+(async () => {
+  const out = [];
+  try {
+    await document.fonts.ready;
+    for (const f of [
+      ['Noto Sans SC Web', 400],
+      ['Noto Sans SC Web', 500],
+      ['Noto Serif SC Web', 400],
+      ['Noto Serif SC Web', 600]
+    ]) {
+      const ok = document.fonts.check(`${f[1]} 16px "${f[0]}"`);
+      out.push(`${f[0]} ${f[1]}: ${ok ? '已加载' : '未加载'}`);
+    }
+  } catch (e) {
+    out.push('检测失败：' + e.message);
+  }
+  document.getElementById('status').textContent = out.join('　|　');
+})();
+</script>
+</body>
+</html>
