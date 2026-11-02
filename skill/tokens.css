@@ -33,6 +33,9 @@
   --font-body: "MiSans", "HarmonyOS Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
   --font-mono: "DejaVuSansM Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Cascadia Mono", monospace;
 
+  /* 楷体：只用于引文 / 项目叙事，不当正文 */
+  --font-kai: "LXGW WenKai", "Kaiti SC", "KaiTi", "STKaiti", serif;
+
   /* 兼容旧名 */
   --font-ui: var(--font-body);
 
@@ -133,7 +136,8 @@
 [data-fonts="web"] {
   --font-display: "Noto Serif SC Web", "Noto Serif SC", "Songti SC", serif;
   --font-body: "Noto Sans SC Web", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  --font-mono: "DejaVuSansM Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-mono: "Sarasa Mono SC Web", "DejaVuSansM Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-kai: "LXGW WenKai Web", "LXGW WenKai", "Kaiti SC", "KaiTi", serif;
 }
 
 /* ============================================================

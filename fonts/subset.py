@@ -53,6 +53,8 @@ TARGETS = [
     ("NotoSansSC-Medium.otf", "noto-sans-sc-500.woff2", False),
     ("NotoSerifSC-Regular.otf", "noto-serif-sc-400.woff2", False),
     ("NotoSerifSC-SemiBold.otf", "noto-serif-sc-600.woff2", False),
+    ("LXGWWenKaiLite-Regular.ttf", "lxgw-wenkai-400.woff2", False),
+    ("SarasaMonoSC-Regular.ttf", "sarasa-mono-sc-400.woff2", False),
 ]
 
 

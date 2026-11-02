@@ -29,7 +29,6 @@
 }
 
 /* ---------- 思源宋体 · 标题 ---------- */
-
 @font-face {
   font-family: "Noto Serif SC Web";
   font-style: normal;
@@ -44,4 +43,23 @@
   font-weight: 600;
   font-display: swap;
   src: url("./build/noto-serif-sc-600.woff2") format("woff2");
+}
+
+/* ---------- 霞鹜文楷 · 引文 / 叙事（楷体） ---------- */
+@font-face {
+  font-family: "LXGW WenKai Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./build/lxgw-wenkai-400.woff2") format("woff2");
+}
+
+/* ---------- 更纱黑体 · 中文等宽 / 代码 ---------- */
+
+@font-face {
+  font-family: "Sarasa Mono SC Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./build/sarasa-mono-sc-400.woff2") format("woff2");
 }

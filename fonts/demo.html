@@ -37,6 +37,15 @@
   <h2>标题（Noto Serif SC）</h2>
   <p style="font-family:var(--font-display); font-size:1.5rem; line-height:1.4; max-width:26em">宋体带来的正式感，比黑体更适合长文与作品集内页。</p>
 
+  <h2>引文（LXGW WenKai 楷体）</h2>
+  <p style="font-family:var(--font-kai); font-size:1.25rem; line-height:1.8; max-width:28em">留白不是空，是让眼睛有地方停下来。这句话用楷体排，语气会软一些，像写在纸上。</p>
+
+  <h2>中文等宽（Sarasa Mono SC）</h2>
+  <pre style="font-family:var(--font-mono); font-size:13px; line-height:1.7; background:#F5F5F4; padding:14px 16px; border-radius:8px; overflow:auto; max-width:36em">// 中文注释也能对齐
+const 布局 = { 留白: 0.55, 动效: 2 };
+if (布局.留白 &gt; 0.5) 开启(极简);
+0123456789 | 中文等宽对齐 | ABC</pre>
+
   <div class="row">
     <div class="spec"><b>汉字覆盖</b><br>测试生僻字：龘 齉 爨 纛 鬮 麤 龗</div>
     <div class="spec"><b>标点</b><br>「引号」、破折号——省略号…… 括号（全角）</div>
@@ -55,7 +64,9 @@
       ['Noto Sans SC Web', 400],
       ['Noto Sans SC Web', 500],
       ['Noto Serif SC Web', 400],
-      ['Noto Serif SC Web', 600]
+      ['Noto Serif SC Web', 600],
+      ['LXGW WenKai Web', 400],
+      ['Sarasa Mono SC Web', 400]
     ]) {
       const ok = document.fonts.check(`${f[1]} 16px "${f[0]}"`);
       out.push(`${f[0]} ${f[1]}: ${ok ? '已加载' : '未加载'}`);

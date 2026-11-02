@@ -7,6 +7,26 @@
     "note": "默认零网络字体。只写 font-family 栈，不打包、不子集化、不上传。本机装了就用，别人打开回落系统字体。验收必须按回落后的效果算。"
   },
 
+  "web": {
+    "enabled": true,
+    "note": "web 模式：打包 woff2 子集，人人一致。仅限 OFL / 可再分发字体。",
+    "css": "fonts/fonts.css",
+    "builder": "fonts/subset.py",
+    "faces": [
+      { "family": "Noto Sans SC Web", "weight": 400, "file": "noto-sans-sc-400.woff2", "kb": 315, "license": "SIL OFL 1.1" },
+      { "family": "Noto Sans SC Web", "weight": 500, "file": "noto-sans-sc-500.woff2", "kb": 318, "license": "SIL OFL 1.1" },
+      { "family": "Noto Serif SC Web", "weight": 400, "file": "noto-serif-sc-400.woff2", "kb": 410, "license": "SIL OFL 1.1" },
+      { "family": "Noto Serif SC Web", "weight": 600, "file": "noto-serif-sc-600.woff2", "kb": 418, "license": "SIL OFL 1.1" },
+      { "family": "LXGW WenKai Web", "weight": 400, "file": "lxgw-wenkai-400.woff2", "kb": 399, "license": "SIL OFL 1.1" },
+      { "family": "Sarasa Mono SC Web", "weight": 400, "file": "sarasa-mono-sc-400.woff2", "kb": 364, "license": "SIL OFL 1.1" }
+    ],
+    "rules": [
+      "只打包 OFL / 可再分发字体（思源、霞鹜文楷、更纱黑体、Montserrat、DejaVu）",
+      "MiSans 与 HarmonyOS Sans 禁再分发且禁修改，永远不进 web 包",
+      "改文案后必须重跑 subset.py，否则新字回落系统字体"
+    ]
+  },
+
   "roles": {
     "display": {
       "purpose": "大标题、展示字（hero 的 h1、幻灯片章节页）",
