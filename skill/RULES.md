@@ -163,12 +163,45 @@
 
 ## 5. 字体 / 间距 / 版面
 
-### 5.1 字族与字重 【定】
+### 5.1 字体策略 【定】
 
-- 中文：`system-ui, "PingFang SC", "Microsoft YaHei", sans-serif`
-- 英文：`system-ui, -apple-system, "Segoe UI", sans-serif`
-- 不用 Inter 当默认
-- 字重只用 **400 / 500**；层级靠字号、颜色、间距，不靠加粗
+**零网络字体。** 不打包、不子集化、不上传任何字体文件。
+
+字体只通过 `font-family` 栈引用：本机装了就用，别人打开自动回落系统字体。
+
+四个原因同时成立：
+
+1. 中文一个字重 3–10MB，网页加载不可接受
+2. MiSans、鸿蒙 Sans 等免费商用字体明确禁止「单独再分发」
+3. 子集化在法律上等于「修改」，而这些字体禁止修改
+4. 导出 PDF / 卡片 CSP 都会拦外链字体
+
+**后果**：验收必须按**回落后的效果**算，不能只按本机装了字体的效果算。
+
+### 5.1.1 三条字体栈 【定】
+
+```css
+--font-display: "Google Sans", "Myriad Pro", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+--font-body:    "MiSans", "HarmonyOS Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+--font-mono:    "DejaVuSansM Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+```
+
+完整清单与许可记录见 `skill/fonts.json`；字体文件在本地 `F:\OH-WorkSpace\fonts-src\`，不进仓库。
+
+### 5.1.2 禁用清单 【定】
+
+- ❌ 把苹方、微软雅黑的字体文件打包进任何仓库
+- ❌ 把商业字体（Google Sans、Myriad Pro、Eras、Avant Garde、Neo Sans Pro、Sackers Gothic、DIN 1451）打包或子集化
+- ❌ 用 `@font-face` 指向任何未经授权确认的字体文件
+- ✅ 只在 `font-family` 栈里写字体名做回落——不复制、不传播，风险最低
+
+### 5.1.3 字重 【定】
+
+只用 **400 / 500**，中文没有 350 / 450 这种中间值。
+
+深底浅字时：字重 400，靠行高 1.8 + 字距 +0.012em 补偿；若仍发虚，直接跳 500，不要停在中间。
+
+层级靠字号、颜色、间距，不靠加粗。不用 Inter 当默认。
 
 ### 5.2 字号与阅读度量 【定】
 

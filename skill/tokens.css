@@ -25,9 +25,15 @@
   --fs-52: 3.25rem;   /* 52px  常规 hero */
   --fs-64: 4rem;      /* 64px  宽屏 hero */
 
-  /* ---------- 字族 ---------- */
-  --font-ui: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  /* ---------- 字族 ----------
+     零网络字体：只写 font-family 栈，不打包、不子集化。
+     详见 skill/fonts.json 与 fonts-src/README.md。 */
+  --font-display: "Google Sans", "Myriad Pro", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-body: "MiSans", "HarmonyOS Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "DejaVuSansM Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Cascadia Mono", monospace;
+
+  /* 兼容旧名 */
+  --font-ui: var(--font-body);
 
   /* ---------- 字重：只用 400 / 500；600 仅限 ≥2.125rem 的展示字 ---------- */
   --weight-body: 400;
@@ -146,6 +152,7 @@ h1, .h1 {
 
 /* 展示级大标题：仅用于 hero / landing，不论在哪一档 */
 .display {
+  font-family: var(--font-display);
   font-size: var(--fs-52);
   line-height: 1.12;
   font-weight: var(--weight-title);

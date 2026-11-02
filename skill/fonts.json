@@ -1,0 +1,174 @@
+{
+  "_comment": "字体映射表。只记录角色、字体族名、许可证与来源，不含任何字体文件。文件在本地 F:\\OH-WorkSpace\\fonts-src\\，不进仓库，不再分发。",
+  "_updated": "2026-11-01",
+
+  "policy": {
+    "bundle_webfont": false,
+    "note": "默认零网络字体。字体只通过 font-family 栈引用，不打包、不子集化、不上传。本机装了就用，别人打开自动回落系统字体。验收必须按回落后的效果算。"
+  },
+
+  "roles": {
+    "display": {
+      "purpose": "大标题、展示字（hero 的 h1、幻灯片章节页）",
+      "stack": "\"Google Sans\", \"Myriad Pro\", \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "note": "前两款是商业字体，仅本机可见。缺失时落到苹方/雅黑。"
+    },
+    "body": {
+      "purpose": "正文、界面文字",
+      "stack": "\"MiSans\", \"HarmonyOS Sans SC\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "note": "MiSans 与鸿蒙 Sans 免费商用但禁止再分发，只能本机装。"
+    },
+    "mono": {
+      "purpose": "数字、代码、表格对齐",
+      "stack": "\"DejaVuSansM Nerd Font Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, \"Cascadia Mono\", monospace",
+      "note": "DejaVu 系可再分发，但本版仍不打包。"
+    }
+  },
+
+  "fonts": [
+    {
+      "id": "misans",
+      "family": "MiSans",
+      "name_zh": "MiSans",
+      "roles": ["body"],
+      "weights": "多字重",
+      "license": "MiSans 字体知识产权许可协议",
+      "redistributable": false,
+      "constraints": "可商用、可嵌入，但不得单独再分发字体文件，不得改编或二次开发；嵌入需注明使用了 MiSans",
+      "source": "https://hyperos.mi.com/font/",
+      "note": "子集化属于改编，因此不子集化、不打包。"
+    },
+    {
+      "id": "harmonyos-sans",
+      "family": "HarmonyOS Sans SC",
+      "name_zh": "鸿蒙 Sans 简体",
+      "roles": ["body"],
+      "weights": "多字重",
+      "license": "HarmonyOS Sans Fonts License",
+      "redistributable": false,
+      "constraints": "可嵌入、可随作品分发，但不得单独再分发或销售，不得修改字体",
+      "source": "https://developer.huawei.com/consumer/cn/design/resource",
+      "note": "同上，不子集化、不打包。"
+    },
+    {
+      "id": "google-sans",
+      "family": "Google Sans",
+      "name_zh": "Google Sans",
+      "roles": ["display"],
+      "weights": "Regular / Medium / Bold",
+      "license": "Google 专有",
+      "redistributable": false,
+      "constraints": "不对外授权，不可分发",
+      "source": "Google 品牌字体，非公开下载",
+      "note": "只能本机已有则显示。"
+    },
+    {
+      "id": "myriad-pro",
+      "family": "Myriad Pro",
+      "name_zh": "Myriad Pro",
+      "roles": ["display", "body"],
+      "weights": "多字重",
+      "license": "Adobe 商业授权",
+      "redistributable": false,
+      "constraints": "桌面授权不含 Web 嵌入",
+      "source": "Adobe Fonts",
+      "note": ""
+    },
+    {
+      "id": "avant-garde",
+      "family": "Avant Garde Gothic",
+      "name_zh": "Avant Garde",
+      "roles": ["display"],
+      "weights": "Book / Medium / Demi",
+      "license": "ITC / Monotype 商业授权",
+      "redistributable": false,
+      "constraints": "桌面授权不含 Web 嵌入",
+      "source": "Monotype",
+      "note": ""
+    },
+    {
+      "id": "neo-sans-pro",
+      "family": "Neo Sans Pro",
+      "name_zh": "Neo Sans Pro",
+      "roles": ["display", "body"],
+      "weights": "多字重",
+      "license": "Monotype 商业授权",
+      "redistributable": false,
+      "constraints": "桌面授权不含 Web 嵌入",
+      "source": "Monotype",
+      "note": ""
+    },
+    {
+      "id": "din-1451",
+      "family": "DIN 1451 Mittelschrift",
+      "name_zh": "DIN 1451 中体",
+      "roles": ["display"],
+      "weights": "Mittelschrift",
+      "license": "按发行方商业授权",
+      "redistributable": false,
+      "constraints": "数字版本多为商业发行，具体看购买渠道 EULA",
+      "source": "视发行方而定",
+      "note": ""
+    },
+    {
+      "id": "eras",
+      "family": "Eras Medium ITC",
+      "name_zh": "Eras 中体",
+      "roles": ["display"],
+      "weights": "Medium",
+      "license": "ITC / Monotype 商业授权",
+      "redistributable": false,
+      "constraints": "桌面授权不含 Web 嵌入",
+      "source": "Monotype",
+      "note": ""
+    },
+    {
+      "id": "sackers-gothic",
+      "family": "Sackers Gothic Light AT",
+      "name_zh": "Sackers Gothic 细体",
+      "roles": ["display"],
+      "weights": "Light",
+      "license": "Monotype 商业授权",
+      "redistributable": false,
+      "constraints": "桌面授权不含 Web 嵌入",
+      "source": "Monotype",
+      "note": ""
+    },
+    {
+      "id": "montserrat",
+      "family": "Montserrat",
+      "name_zh": "Montserrat",
+      "roles": ["display", "body"],
+      "weights": "多字重 / 可变",
+      "license": "SIL OFL 1.1",
+      "redistributable": true,
+      "constraints": "可再分发，需保留许可与版权声明，不得单独售卖字体文件",
+      "source": "https://github.com/JulietaUla/Montserrat",
+      "note": "本版仍未打包，但将来若要公开托管，这是首选。"
+    },
+    {
+      "id": "dejavu-nerd",
+      "family": "DejaVuSansM Nerd Font Mono",
+      "name_zh": "DejaVu Sans Mono Nerd Font",
+      "roles": ["mono"],
+      "weights": "Book / Bold",
+      "license": "Bitstream Vera + Nerd Fonts 增补",
+      "redistributable": true,
+      "constraints": "可再分发，需保留版权声明",
+      "source": "https://github.com/ryanoasis/nerd-fonts",
+      "note": ""
+    },
+    {
+      "id": "sthginkra",
+      "family": "Sthginkra",
+      "name_zh": "Sthginkra",
+      "roles": ["display"],
+      "weights": "待核",
+      "license": "待核",
+      "redistributable": false,
+      "constraints": "未确认来源，暂按商业字体处理",
+      "source": "待补",
+      "note": "需 MaTa 提供来源后更新本条。"
+    }
+  ]
+}
