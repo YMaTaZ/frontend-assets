@@ -180,13 +180,29 @@
 
 ### 5.1.1 三条字体栈 【定】
 
+本机已收录四款字体（详见 `skill/fonts.json`，文件在 `F:\OH-WorkSpace\fonts-src\`）：
+
+| 字体 | 角色 | 许可 |
+|---|---|---|
+| MiSans | 正文（中文主用） | 免费商用，禁再分发 / 禁改编 |
+| HarmonyOS Sans SC | 正文（备选） | 免费商用，禁再分发 / 禁修改 |
+| Montserrat | 展示字（拉丁） | SIL OFL 1.1，可再分发 |
+| DejaVu Sans Mono Nerd Font | 等宽 | Bitstream Vera，可再分发 |
+
 ```css
---font-display: "Google Sans", "Myriad Pro", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+--font-display: "Montserrat", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 --font-body:    "MiSans", "HarmonyOS Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
 --font-mono:    "DejaVuSansM Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 ```
 
-完整清单与许可记录见 `skill/fonts.json`；字体文件在本地 `F:\OH-WorkSpace\fonts-src\`，不进仓库。
+分工：展示字拉丁用 Montserrat、中文落到 MiSans；正文中文 MiSans 主用、鸿蒙备选；数字与代码用 DejaVu Mono。
+
+**建议只装这几个字重**，其余用不上还拖慢字体列表：
+
+- MiSans：Regular / Medium / Semibold
+- HarmonyOS Sans SC：Regular / Medium
+- Montserrat：Regular / Medium / SemiBold
+- DejaVu Mono：Regular / Bold
 
 ### 5.1.2 禁用清单 【定】
 
