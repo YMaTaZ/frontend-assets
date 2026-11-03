@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>反例对照 · 错在哪，对在哪</title>
+<style>
+  :root{
+    --paper:#f8f4ed; --ink:#2b2925; --soft:#57534a; --faint:#8b8578;
+    --line:#e3ddd1; --accent:#b4552d; --bad:#b3261e; --good:#2f6b4f;
+    --r-card:14px; --r-inner:10px; --r-ctl:6px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:56px 32px 96px; background:var(--paper); color:var(--ink);
+    font:400 16px/1.75 "MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:2rem;line-height:1.3;font-weight:500;margin:0 0 12px;letter-spacing:-.015em}
+  .lede{color:var(--soft);max-width:32em;margin:0 0 48px}
+  .pair{border-top:1px solid var(--line);padding:40px 0}
+  .pair__head{display:flex;align-items:baseline;gap:12px;margin:0 0 8px}
+  .pair__n{font-family:ui-monospace,Consolas,monospace;font-size:13px;color:var(--faint)}
+  .pair__title{font-size:1.25rem;font-weight:500;margin:0}
+  .pair__why{color:var(--soft);font-size:14px;margin:0 0 24px;max-width:38em}
+  .demo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .box{border:1px solid var(--line);border-radius:var(--r-inner);padding:24px;background:#fffdf8}
+  .tag{display:inline-block;font-size:12px;font-family:ui-monospace,Consolas,monospace;letter-spacing:.06em;margin:0 0 14px}
+  .tag.bad{color:var(--bad)} .tag.good{color:var(--good)}
+
+  /* 1 eyebrow */
+  .eb{font-size:12px;letter-spacing:.14em;color:var(--faint);margin:0 0 6px;text-transform:uppercase}
+  .h-plain{font-size:1.5rem;font-weight:500;margin:0;line-height:1.3}
+
+  /* 2 渐变文字 */
+  .grad{font-size:1.5rem;font-weight:600;margin:0;background:linear-gradient(90deg,#6b7fd7,#b48fd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .weight{font-size:1.5rem;font-weight:500;margin:0;letter-spacing:-.01em}
+
+  /* 3 阴影 */
+  .hard{background:#fff;border-radius:var(--r-card);padding:18px;box-shadow:4px 4px 0 #c9c2b4}
+  .soft{background:#fff;border-radius:var(--r-card);padding:18px;box-shadow:0 4px 18px -6px rgba(43,41,37,.16)}
+
+  /* 4 三栏等高卡 */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--r-inner);padding:14px;font-size:13px;line-height:1.6}
+  .card b{display:block;font-weight:500;margin-bottom:4px}
+  .lead{background:#fff;border:1px solid var(--line);border-radius:var(--r-inner);padding:18px}
+  .lead b{font-size:1.05rem;font-weight:500}
+  .lead p{margin:6px 0 0;font-size:14px;color:var(--soft)}
+  .subs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;font-size:13px;color:var(--soft)}
+
+  /* 5 玻璃在内容上 */
+  .glass-wrap{position:relative;border-radius:var(--r-inner);overflow:hidden;padding:24px;background:
+     linear-gradient(120deg,#cfd9e8,#e8dcd0 55%,#cfd9e8)}
+  .glass{backdrop-filter:blur(12px);background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.6);border-radius:10px;padding:14px;font-size:13px}
+  .solid{background:#fdfbf6;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:13px}
+  .solid-wrap{border-radius:var(--r-inner);padding:24px;background:linear-gradient(120deg,#cfd9e8,#e8dcd0 55%,#cfd9e8)}
+
+  /* 6 mono */
+  .mono-all{font-family:ui-monospace,Consolas,monospace;font-size:14px;line-height:1.8}
+  .mono-num{font-size:14px}
+  .mono-num b{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums;font-weight:400;font-size:1.5rem}
+
+  /* 7 冷灰 */
+  .cold{color:#888}
+  .warm{color:#6f6657}
+
+  /* 8 emoji 图标 */
+  .emj{font-size:20px;display:flex;gap:14px;align-items:center}
+  .svgrow{display:flex;gap:18px;align-items:center;color:var(--ink)}
+  .svgrow svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);padding-top:20px;color:var(--faint);font-size:13px}
+  @media (max-width:760px){ .demo{grid-template-columns:1fr} body{padding:32px 20px 64px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>反例对照</h1>
+<p class="lede">左边是品类默认答案，右边是做完决定之后的样子。八对，每一对都能一眼看出差别——看不出差别的那一对，说明这条还没学会。</p>
+
+<!-- 1 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">01</span><h2 class="pair__title">标题上方的小字</h2></div>
+  <p class="pair__why">eyebrow 是硬禁：它替标题说了一句标题自己该说的话。删掉它，标题立刻变重。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span><p class="eb">使用场景</p><p class="h-plain">延迟落在三处</p></div>
+    <div class="box"><span class="tag good">✓</span><p class="h-plain" style="margin-top:22px">延迟落在三处</p></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">02</span><h2 class="pair__title">渐变文字</h2></div>
+  <p class="pair__why">强调来自字重与字号，不来自渐变。渐变文字一出现，页面就有了 2021 年的味道。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span><p class="grad">更快的一次推理</p></div>
+    <div class="box"><span class="tag good">✓</span><p class="weight">更快的一次推理</p></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">03</span><h2 class="pair__title">硬偏移阴影</h2></div>
+  <p class="pair__why">零模糊的块状阴影是戏服，不是深度系统。要层次就给偏移加软模糊，或者干脆只用边框。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span><div class="hard">4px 4px 0</div></div>
+    <div class="box"><span class="tag good">✓</span><div class="soft">偏移 + 软模糊</div></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">04</span><h2 class="pair__title">三张等高功能卡</h2></div>
+  <p class="pair__why">三张同样大的卡片意味着三件事一样重要，可它们几乎从来不是。主次先分出来，卡片才有存在的理由。</p>
+  <div class="demo">
+    <div class="box">
+      <span class="tag bad">✗</span>
+      <div class="cards">
+        <div class="card"><b>快速</b>87ms 首 token</div>
+        <div class="card"><b>便宜</b>¥0.8 每百万</div>
+        <div class="card"><b>可控</b>128k 上下文</div>
+      </div>
+    </div>
+    <div class="box">
+      <span class="tag good">✓</span>
+      <div class="lead"><b>87ms 首 token</b><p>同一套接口，三种场景要的不是同一个指标。</p></div>
+      <div class="subs"><span>¥0.8 / 百万</span><span>128k 上下文</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">05</span><h2 class="pair__title">玻璃用在内容上</h2></div>
+  <p class="pair__why">模糊只属于控件层。内容层一旦变透明，正文立刻不可读——它是设计，不是装饰。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span>
+      <div class="glass-wrap"><div class="glass">这是一段正文。它现在是半透明的，底下还在跑图案。</div></div>
+    </div>
+    <div class="box"><span class="tag good">✓</span>
+      <div class="solid-wrap"><div class="solid">这是一段正文。它是不透明的，压得住底下的任何东西。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">06</span><h2 class="pair__title">等宽字体当布景</h2></div>
+  <p class="pair__why">等宽只属于代码、数据、度量。整段正文用等宽，是在用字体假装技术感。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span><p class="mono-all" style="margin:0">全站都用等宽字，看起来很像工程师写的。</p></div>
+    <div class="box"><span class="tag good">✓</span><p class="mono-num" style="margin:0">正文用正文字体，数字用等宽：<b>87ms</b></p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">07</span><h2 class="pair__title">冷灰当次级文字</h2></div>
+  <p class="pair__why">#888 不属于这套底色。次级文字要从底色相里调——同一家族的暗一档，而不是掺灰。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span><p class="cold" style="margin:0">次级说明文字，用的是 #888。</p></div>
+    <div class="box"><span class="tag good">✓</span><p class="warm" style="margin:0">次级说明文字，从米色底里调暗。</p></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="pair">
+  <div class="pair__head"><span class="pair__n">08</span><h2 class="pair__title">emoji 冒充图标</h2></div>
+  <p class="pair__why">emoji 是字符，不是图标系统：颜色由系统决定，线宽不存在，跨平台长相全不一样。</p>
+  <div class="demo">
+    <div class="box"><span class="tag bad">✗</span>
+      <div class="emj"><span>⚡</span><span>💰</span><span>🔒</span></div>
+    </div>
+    <div class="box"><span class="tag good">✓</span>
+      <div class="svgrow" aria-label="速度、价格、安全">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7Z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.5-.9-1.4-1.4-2.5-1.4-1.4 0-2.4.8-2.4 2 0 1.3 1 1.9 2.4 2.2 1.4.3 2.5.9 2.5 2.2 0 1.2-1 2-2.5 2-1.2 0-2.2-.5-2.6-1.5M12 6v2m0 8v2"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>八对之外，完整清单在 <code>RULES.md</code> 第 10 节与 <code>craft-floor.md</code> 第二节。</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>幻灯片模板 · 极简风格</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="slide.css">
+<style>
+  /* 本页专属：示意图全部 CSS 自绘，不带外部素材 */
+
+  /* 封面：承重型图案，占留白面积约 2/5，贴右下角，被画布边缘裁掉一部分 */
+  .slide--cover { justify-content: center; }
+  .slide--cover .slide__foot { position: absolute; left: 64px; right: 64px; bottom: 36px; margin: 0; }
+  .cover__mass {
+    position: absolute;
+    right: -7%; bottom: -18%;
+    width: 40%; aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: .9;
+  }
+  .cover__text { position: relative; max-width: 20em; }
+
+  /* 区块页：主张在上，一句在下 */
+  .slide--section { justify-content: space-between; }
+  .section__big {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 76px;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    margin: 0;
+  }
+  .section__line {
+    font-size: 24px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 22em;
+    margin: 0;
+  }
+
+  /* 内容页：三栏并置，各自落在块线上 */
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 24px;
+    margin-top: 48px;
+  }
+  .col { border-top: 1px solid var(--line); padding-top: 16px; }
+  .col:nth-child(1) { grid-column: 1 / 3; }
+  .col:nth-child(2) { grid-column: 3 / 5; }
+  .col:nth-child(3) { grid-column: 5 / 7; }
+  .col h3 { font-size: 21px; margin: 0 0 8px; font-weight: 500; }
+  .col p { font-size: 17px; line-height: 1.7; margin: 0; color: var(--ink-soft); }
+
+  /* 数据页：等宽 tabular，竖着能比 */
+  .figs {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    column-gap: 24px;
+    row-gap: 20px;
+    margin-top: 40px;
+  }
+  .figs dt {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 30px;
+    line-height: 1.3;
+    letter-spacing: -.01em;
+  }
+  .figs dd {
+    margin: 0; align-self: center;
+    font-size: 18px; line-height: 1.6; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<div class="deck">
+  <div class="deck__stage">
+
+    <!-- 1 封面：A 档，单一主张 + 一处承重 -->
+    <section class="slide slide--cover">
+      <div class="cover__mass enter" aria-hidden="true"></div>
+      <div class="cover__text">
+        <p class="slide__kicker enter">2026 · 设计系统</p>
+        <h1 class="enter">一页只讲<br>一件事</h1>
+        <p class="enter" style="margin-top:28px">幻灯片是内容的容器，不是模板的容器。</p>
+      </div>
+      <footer class="slide__foot enter">
+        <span>← → 翻页 · F 全屏</span>
+        <span>演示内容</span>
+      </footer>
+    </section>
+
+    <!-- 2 章节页：C 档，大字 + 一句 -->
+    <section class="slide slide--section">
+      <div>
+        <p class="slide__kicker enter">第一部分</p>
+        <h1 class="section__big enter">为什么<br>是六块</h1>
+      </div>
+      <p class="section__line enter">块只规定起止点能落在哪，<br>不规定谁必须站在哪。</p>
+    </section>
+
+    <!-- 3 内容页：B 档，三栏并置，各占两块 -->
+    <section class="slide">
+      <h2 class="enter">三种重排手法</h2>
+      <div class="cols">
+        <div class="col enter">
+          <h3>叠</h3>
+          <p>并置关系改纵向单栏，跨度全部落回满宽。</p>
+        </div>
+        <div class="col enter">
+          <h3>换轴</h3>
+          <p>图与文的关系改上下，不把图缩成缩略图。</p>
+        </div>
+        <div class="col enter">
+          <h3>降级</h3>
+          <p>窄屏不承载主张的块，删掉或折起来。</p>
+        </div>
+      </div>
+      <footer class="slide__foot enter">
+        <span>窄屏不是等比缩小</span>
+      </footer>
+    </section>
+
+    <!-- 4 数据页 -->
+    <section class="slide">
+      <h2 class="enter">同一件事，两种延迟</h2>
+      <dl class="figs">
+        <dt class="enter">87ms</dt><dd class="enter">首 token 到达，用户感觉是「立刻」</dd>
+        <dt class="enter">320ms</dt><dd class="enter">仍在可接受带内，但开始有人重按</dd>
+        <dt class="enter">1.4s</dt><dd class="enter">越过等待阈值，注意力开始游走</dd>
+      </dl>
+      <footer class="slide__foot enter">
+        <span>数字与文案均为演示</span>
+      </footer>
+    </section>
+
+    <!-- 5 结尾 -->
+    <section class="slide slide--section">
+      <div>
+        <h2 class="enter">先把大纲填完</h2>
+        <p class="enter" style="margin-top:20px">大纲没定，不选色、不排版、不写 CSS。</p>
+      </div>
+      <p class="section__line enter">接下来：等分 → 空间主张 → 跨度 → 破格。</p>
+      <footer class="slide__foot enter">
+        <span>outline-template.md</span>
+      </footer>
+    </section>
+
+  </div>
+</div>
+
+<nav class="deck__hud" aria-label="翻页">
+  <span>← →</span>
+  <span class="deck__count">1 / 5</span>
+</nav>
+<div class="deck__bar"></div>
+
+<script src="slide.js"></script>
+</body>
+</html>
