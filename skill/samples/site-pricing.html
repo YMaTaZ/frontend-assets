@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN" data-fonts="web">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>定价 · 按 token 计费 — SupernovaAI</title>
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="./site.css">
+<style>
+  /* 比例示意：不是破格图案，是一条克制的数据条 */
+  .ratio {
+    grid-column: 2 / 7;
+    display: flex;
+    align-items: stretch;
+    gap: 3px;
+    margin: var(--space-7) 0 var(--space-4);
+    height: 28px;
+  }
+  .ratio__free {
+    flex: 0 0 6%;
+    background: rgba(41, 37, 36, .16);
+    border-radius: 999px;
+  }
+  .ratio__paid {
+    flex: 1;
+    background: #292524;
+    border-radius: 999px;
+  }
+  .ratio__legend {
+    grid-column: 2 / 7;
+    display: flex;
+    gap: var(--space-5);
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    margin-bottom: var(--space-9);
+  }
+  .ratio__legend i {
+    display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px;
+  }
+
+  /* 价格三档 */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    grid-column: 2 / 7;
+    margin-bottom: var(--space-9);
+  }
+  .tier {
+    background: var(--paper);
+    padding: 26px 24px 28px;
+    display: flex; flex-direction: column; gap: var(--space-2);
+  }
+  .tier--main { background: #FCFAF5; }
+  .tier__name { font-size: 13px; font-weight: 500; }
+  .tier__price {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum" 1;
+    font-size: 1.75rem; line-height: 1.2; letter-spacing: -.02em;
+  }
+  .tier__price small { display: block; margin: 2px 0 0; font-size: .68rem; font-weight: 400; color: var(--ink-faint); }
+  .tier__desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.7; }
+  .tier__list { list-style: none; margin: var(--space-3) 0 0; padding: 0; font-size: 12px; color: var(--ink-soft); }
+  .tier__list li { padding-left: 14px; position: relative; margin-bottom: 5px; }
+  .tier__list li::before {
+    content: ""; position: absolute; left: 0; top: 9px;
+    width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint);
+  }
+  .tier .btn { margin-top: auto; align-self: flex-start; }
+
+  @media (max-width: 900px) {
+    .ratio, .ratio__legend, .tiers { grid-column: 1 / 7; }
+    .tiers { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-page="pricing">
+
+<header class="nav" id="nav">
+  <a class="brand" href="./supernova-site.html">Supernova<em>AI</em></a>
+  <nav class="nav__links">
+    <a href="./site-product.html">产品</a>
+    <a href="./site-pricing.html" aria-current="page">定价</a>
+    <a href="./site-docs.html">文档</a>
+    <a href="#" class="nav__cta">拿 key</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="split">
+      <p class="eyebrow">Pricing</p>
+      <h1 class="headline">按 token 计费，<br>没有最低消费</h1>
+      <p class="lede">免费额度每月 100 万 token，用完就停，不会自动扣费。要更多就充，不订阅、不包年、不锁额度。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="split">
+      <div class="ratio" aria-hidden="true">
+        <div class="ratio__free"></div>
+        <div class="ratio__paid"></div>
+      </div>
+      <div class="ratio__legend">
+        <span><i style="background:rgba(41,37,36,.18)"></i>免费额度 100 万 token</span>
+        <span><i style="background:#292524"></i>付费部分，按量结算</span>
+      </div>
+
+      <div class="tiers">
+        <div class="tier">
+          <span class="tier__name">免费</span>
+          <span class="tier__price">¥0</span>
+          <span class="tier__desc">每月 100 万 token，够跑通整套流程。</span>
+          <ul class="tier__list">
+            <li>全部模型可用</li>
+            <li>并发上限 2</li>
+            <li>7 天日志保留</li>
+          </ul>
+          <a class="btn btn--ghost" href="#">拿 key</a>
+        </div>
+
+        <div class="tier tier--main">
+          <span class="tier__name">按量</span>
+          <span class="tier__price">¥0.8<small>/ 百万 token</small></span>
+          <span class="tier__desc">用完免费额度后自动转到按量，充多少用多少。</span>
+          <ul class="tier__list">
+            <li>输入输出分开计价</li>
+            <li>并发上限 64</li>
+            <li>30 天日志保留</li>
+            <li>结构化返回不额外收费</li>
+          </ul>
+          <a class="btn" href="#">充值</a>
+        </div>
+
+        <div class="tier">
+          <span class="tier__name">企业</span>
+          <span class="tier__price">面议</span>
+          <span class="tier__desc">独享节点、固定带宽、SLA 与合规支持。</span>
+          <ul class="tier__list">
+            <li>专属推理节点</li>
+            <li>并发与速率可谈</li>
+            <li>私有部署可选</li>
+            <li>发票与合同</li>
+          </ul>
+          <a class="btn btn--ghost" href="#">联系我们</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="note-band">
+    <div class="split">
+      <p class="note-band__text">价格为示例，真实定价以官网为准。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot-wrap">
+  <div class="split">
+    <div class="foot">
+      <span>© 2026 SupernovaAI</span>
+      <span>示例页面 · 数据为演示用</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./site.js"></script>
+</body>
+</html>

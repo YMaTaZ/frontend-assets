@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN" data-fonts="web">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>产品 · 一个请求怎么走完 — SupernovaAI</title>
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="./site.css">
+</head>
+<body data-page="product">
+
+<header class="nav" id="nav">
+  <a class="brand" href="./supernova-site.html">Supernova<em>AI</em></a>
+  <nav class="nav__links">
+    <a href="./site-product.html" aria-current="page">产品</a>
+    <a href="./site-pricing.html">定价</a>
+    <a href="./site-docs.html">文档</a>
+    <a href="#" class="nav__cta">拿 key</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="split">
+      <p class="eyebrow">How it works</p>
+      <h1 class="headline">一个请求，<br>走完三段</h1>
+      <p class="lede">接入、路由、返回。每段都有明确的耗时预算，加起来就是首 token 的 87ms。</p>
+    </div>
+  </section>
+
+  <!-- 引导型破格：一条竖线贯穿三段流程 -->
+  <section class="flow">
+    <div class="split flow__grid">
+      <div class="flow__body" id="rail">
+        <article class="step">
+          <span class="step__n">01</span>
+          <h2>接入</h2>
+          <p>把 baseURL 指向我们，其余不变。SDK 兼容 OpenAI 接口，已有的 function calling、JSON mode 都不用改。</p>
+          <p class="step__meta">预算 0ms · 编译期完成</p>
+        </article>
+
+        <article class="step">
+          <span class="step__n">02</span>
+          <h2>路由</h2>
+          <p>请求落到最近的推理节点。模型权重常驻显存，没有冷启动，所以第一颗 token 不用等加载。</p>
+          <p class="step__meta">预算 41ms · 含排队</p>
+        </article>
+
+        <article class="step">
+          <span class="step__n">03</span>
+          <h2>返回</h2>
+          <p>流式吐出，首颗 token 先到，后面按生成速度跟。结构化返回在流里保持合法 JSON，不用等结束再解析。</p>
+          <p class="step__meta">预算 46ms · 首 token</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="note-band">
+    <div class="split">
+      <p class="note-band__text">三段预算是示例，真实数值随模型与区域浮动。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot-wrap">
+  <div class="split">
+    <div class="foot">
+      <span>© 2026 SupernovaAI</span>
+      <span>示例页面 · 数据为演示用</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./site.js"></script>
+</body>
+</html>

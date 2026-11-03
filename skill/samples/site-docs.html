@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN" data-fonts="web">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文档 · 两行代码换掉 SDK — SupernovaAI</title>
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="./site.css">
+<style>
+  /* 文档页不破格：信息密集，本身就在减速 */
+  .docs { padding: var(--space-9) 0; border-top: 1px solid var(--line); }
+  .docs__grid { row-gap: 0; }
+
+  .docs h2 {
+    grid-column: 2 / 7;
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 1.5rem; line-height: 1.4;
+    margin: var(--space-8) 0 var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .docs h2:first-of-type { margin-top: 0; }
+
+  .docs p { grid-column: 2 / 6; margin: 0 0 var(--space-4); color: var(--ink-soft); max-width: 30em; }
+
+  pre {
+    grid-column: 2 / 7;
+    margin: 0 0 var(--space-5);
+    background: #F2F0EC;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    font-family: var(--font-mono);
+    font-size: 12.5px; line-height: 1.85;
+    overflow-x: auto;
+    color: #3B3D3F;
+  }
+  pre .c { color: #8E9196; }
+  pre .k { color: var(--accent); }
+  pre .s { color: #7A5A46; }
+
+  .kv {
+    grid-column: 2 / 7;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 8px 20px;
+    font-size: 13px;
+    margin: 0;
+  }
+  .kv dt { color: var(--ink-faint); font-family: var(--font-mono); font-size: 12px; }
+  .kv dd { margin: 0; color: var(--ink-soft); }
+
+  .anchor-nav {
+    grid-column: 2 / 7;
+    display: flex; gap: var(--space-5); flex-wrap: wrap;
+    font-size: 12px; color: var(--ink-faint);
+    margin-bottom: var(--space-6);
+  }  .anchor-nav a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .anchor-nav a:hover { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .docs h2, .docs p, pre, .kv, .anchor-nav { grid-column: 1 / 7; }
+  }
+</style>
+</head>
+<body data-page="docs">
+
+<header class="nav" id="nav">
+  <a class="brand" href="./supernova-site.html">Supernova<em>AI</em></a>
+  <nav class="nav__links">
+    <a href="./site-product.html">产品</a>
+    <a href="./site-pricing.html">定价</a>
+    <a href="./site-docs.html" aria-current="page">文档</a>
+    <a href="#" class="nav__cta">拿 key</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="split">
+      <p class="eyebrow">Quickstart</p>
+      <h1 class="headline">两行代码，<br>换掉现有 SDK</h1>
+      <p class="lede">兼容 OpenAI 的接口形状。改一个 baseURL，其余不用动。</p>
+    </div>
+  </section>
+
+  <section class="docs">
+    <div class="split docs__grid">
+      <nav class="anchor-nav" aria-label="页内导航">
+        <a href="#install">安装</a>
+        <a href="#auth">鉴权</a>
+        <a href="#stream">流式</a>
+        <a href="#limits">限制</a>
+      </nav>
+
+      <h2 id="install">安装</h2>
+      <pre><code>npm i openai</code></pre>
+
+      <h2>改一行地址</h2>
+      <pre><code><span class="c">// 原来</span>
+<span class="k">const</span> client = <span class="k">new</span> OpenAI({ apiKey: process.env.KEY });
+
+<span class="c">// 换成</span>
+<span class="k">const</span> client = <span class="k">new</span> OpenAI({
+  apiKey: process.env.NOVA_KEY,
+  baseURL: <span class="s">"https://api.supernova.ai/v1"</span>
+});</code></pre>
+
+      <h2 id="auth">鉴权</h2>
+      <p>走 Authorization 头，Bearer 形式。key 在控制台创建，可设过期时间与额度上限。</p>
+      <pre><code>Authorization: Bearer $NOVA_KEY</code></pre>
+
+      <h2 id="stream">流式返回</h2>
+      <p>默认流式。每块是合法 JSON，结构化的内容不会在流中途断裂。</p>
+      <pre><code><span class="k">const</span> stream = <span class="k">await</span> client.chat.completions.create({
+  model: <span class="s">"nova-1"</span>,
+  stream: <span class="k">true</span>,
+  messages: [{ role: <span class="s">"user"</span>, content: <span class="s">"你好"</span> }]
+});
+
+<span class="k">for await</span> (<span class="k">const</span> chunk <span class="k">of</span> stream) {
+  process.stdout.write(chunk.choices[0]?.delta?.content ?? <span class="s">""</span>);
+}</code></pre>
+
+      <h2 id="limits">限制</h2>
+      <dl class="kv">
+        <dt>单请求</dt><dd>上下文 128k token，输出上限 8k</dd>
+        <dt>并发</dt><dd>免费 2，按量 64，企业可谈</dd>
+        <dt>速率</dt><dd>按量默认 600 请求 / 分钟</dd>
+        <dt>日志</dt><dd>免费保留 7 天，按量 30 天</dd>
+        <dt>超时</dt><dd>流式连接 60s，非流式 30s</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="note-band">
+    <div class="split">
+      <p class="note-band__text">以上参数为示例，真实限制以官方文档为准。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot-wrap">
+  <div class="split">
+    <div class="foot">
+      <span>© 2026 SupernovaAI</span>
+      <span>示例页面 · 数据为演示用</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./site.js"></script>
+</body>
+</html>
