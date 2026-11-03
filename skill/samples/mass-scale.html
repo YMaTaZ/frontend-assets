@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN" data-ramp="a" data-fonts="web">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>承重图案 · 相对留白的三档尺度</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<style>
+  body { margin: 0; background: #FAFAF9; color: #292524; }
+  .page { max-width: 1180px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; margin: 0 0 6px; }
+  .sub { font-size: 13px; color: #57534E; margin: 0 0 28px; max-width: 44em; line-height: 1.7; }
+
+  /* 每版就是一个 6 等分的地基 */
+  .case {
+    border: 1px solid rgba(120,113,108,.18);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    background: #FCFAF5;
+  }
+  .case__head {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(120,113,108,.14);
+    font-size: 12.5px;
+  }
+  .case__id { font-family: var(--font-mono); font-size: 11px; color: #537D96; letter-spacing: .06em; }
+  .case__note { margin-left: auto; color: #8E9196; font-size: 11.5px; }
+
+  .stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 24px;
+    padding: 48px 40px;
+    min-height: 300px;
+    align-content: center;
+  }
+
+  /* 内容全部落在块线上：标题 1→4，正文 1→4，按钮 1→2 */
+  .t  { grid-column: 1 / 5; font-family: var(--font-display); font-size: 2rem; line-height: 1.25; margin: 0 0 14px; }
+  .p  { grid-column: 1 / 5; font-size: 14px; line-height: 1.8; color: #57534E; margin: 0 0 20px; max-width: 26em; }
+  .b  { grid-column: 1 / 3; display: flex; gap: 12px; }
+  .btn { height: 38px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 6px;
+         background: #292524; color: #FAFAF9; font-size: 12.5px; text-decoration: none; }
+
+  /* 承重图案：落在右侧留白里（第 5–6 块），不参与文字排版 */
+  .mass {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #292524;
+    border-radius: 50%;
+    pointer-events: none;      /* 不做交互 */
+    user-select: none;
+  }
+  /* 局部融入背景：左缘化开，右缘保持实 */
+  .mass--bleed {
+    background: radial-gradient(circle at 72% 50%, #292524 62%, rgba(41,37,36,.55) 78%, rgba(41,37,36,0) 100%);
+  }
+  /* 用线条中和：实心里开三条缝 */
+  .mass--lines {
+    background:
+      linear-gradient(#FAFAF9, #FAFAF9) 50% 30% / 78% 2px no-repeat,
+      linear-gradient(#FAFAF9, #FAFAF9) 50% 50% / 62% 2px no-repeat,
+      linear-gradient(#FAFAF9, #FAFAF9) 50% 70% / 46% 2px no-repeat,
+      #292524;
+  }
+
+  /* 尺度的三种取法，全部相对留白而非控件 */
+  .a .mass { width: 132px; height: 132px; }   /* 留白约 380×300，约占 1/3 */
+  .b .mass { width: 196px; height: 196px; }   /* 约占 1/2，最满 */
+  .c .mass { width: 96px;  height: 96px;  }   /* 约占 1/4，留白包住它 */
+
+  .legend { font-size: 11.5px; color: #8E9196; margin: 2px 0 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>承重图案 · 相对留白的三档尺度</h1>
+  <p class="sub">
+    同一个 hero，同一个位置（标题右侧那块留白），只有图案尺寸变。控件高度 38px，三版图案分别是它的 3.5 倍、5 倍、2.5 倍——所以三版都不会被读成按钮。
+    真正的差别是：图案和留白的比例。
+  </p>
+
+  <section class="case a">
+    <header class="case__head">
+      <span class="case__id">A</span>
+      <span>约占留白 1/3</span>
+      <span class="case__note">132px · 留白仍完整，图案只是落进去</span>
+    </header>
+    <div class="stage">
+      <h2 class="t">安静地做减法</h2>
+      <p class="p">留白不是空，是让眼睛有地方停下来。图案落在右边那块空里，不参与文字。</p>
+      <div class="b"><a class="btn" href="#">看作品</a></div>
+      <div class="mass mass--bleed"></div>
+    </div>
+  </section>
+
+  <section class="case b">
+    <header class="case__head">
+      <span class="case__id">B</span>
+      <span>约占留白 1/2</span>
+      <span class="case__note">196px · 最满，留白被压成一条边</span>
+    </header>
+    <div class="stage">
+      <h2 class="t">安静地做减法</h2>
+      <p class="p">留白不是空，是让眼睛有地方停下来。图案落在右边那块空里，不参与文字。</p>
+      <div class="b"><a class="btn" href="#">看作品</a></div>
+      <div class="mass mass--lines"></div>
+    </div>
+  </section>
+
+  <section class="case c">
+    <header class="case__head">
+      <span class="case__id">C</span>
+      <span>约占留白 1/4</span>
+      <span class="case__note">96px · 留白包住图案，重量偏轻</span>
+    </header>
+    <div class="stage">
+      <h2 class="t">安静地做减法</h2>
+      <p class="p">留白不是空，是让眼睛有地方停下来。图案落在右边那块空里，不参与文字。</p>
+      <div class="b"><a class="btn" href="#">看作品</a></div>
+      <div class="mass"></div>
+    </div>
+  </section>
+
+  <p class="legend">三版都满足：尺寸远大于控件、落在留白最大处、不做任何交互反馈。</p>
+</div>
+</body>
+</html>
